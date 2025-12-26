@@ -35,7 +35,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 **Independent Test**: `npm run dev` loads app without errors; styles apply correctly.
 
 ### Implementation
-- [ ] T012 [US1] Enforce Atomic Design folder structure (atoms, molecules, organisms, templates, pages) in src/
+- [x] T012 [US1] Enforce Atomic Design folder structure (atoms, molecules, organisms, templates, pages) in src/
 - [ ] T013 [P] [US1] Create placeholder Atom: Button (DaisyUI styled) in src/components/atoms/Button/Button.tsx
 - [ ] T014 [P] [US1] Create placeholder Molecule: Card (DaisyUI styled) in src/components/molecules/Card/Card.tsx
 - [ ] T015 [US1] Update App.tsx to display these placeholders for visual verification in src/App.tsx
