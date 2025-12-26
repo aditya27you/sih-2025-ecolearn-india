@@ -17,7 +17,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 - [x] T003 [P] Configure TypeScript strict mode and path aliases (@/*) in tsconfig.json and tsconfig.app.json
 - [x] T004 Configure Vite with path aliases and React plugin in vite.config.ts
 - [x] T005 [P] Setup Vitest, JSDOM, and Testing Library in vitest.config.ts (or vite.config.ts)
-- [ ] T006 [P] Install Google Fonts (Nunito, Poppins) and Material Symbols in index.html
+- [x] T006 [P] Install Google Fonts (Nunito, Poppins) and Material Symbols in index.html
 
 ## Phase 2: Foundational (Blocking Prerequisites)
 
