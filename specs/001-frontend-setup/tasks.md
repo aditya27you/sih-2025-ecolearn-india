@@ -50,7 +50,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 - [x] T017 [P] [US2] Create Page placeholder: Home in src/pages/Home/Home.tsx
 - [x] T018 [P] [US2] Create Page placeholder: Dashboard in src/pages/Dashboard/Dashboard.tsx
 - [x] T019 [P] [US2] Create Page placeholder: Modules in src/pages/Modules/Modules.tsx
-- [ ] T020 [P] [US2] Create Page placeholder: NotFound in src/pages/NotFound/NotFound.tsx
+- [x] T020 [P] [US2] Create Page placeholder: NotFound in src/pages/NotFound/NotFound.tsx
 - [ ] T021 [US2] Configure React Router v7 (Data Router) with routes in src/router.tsx
 - [ ] T022 [US2] Integrate RouterProvider into application root in src/main.tsx
 
