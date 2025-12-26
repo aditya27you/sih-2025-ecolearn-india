@@ -52,7 +52,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 - [x] T019 [P] [US2] Create Page placeholder: Modules in src/pages/Modules/Modules.tsx
 - [x] T020 [P] [US2] Create Page placeholder: NotFound in src/pages/NotFound/NotFound.tsx
 - [x] T021 [US2] Configure React Router v7 (Data Router) with routes in src/router.tsx
-- [ ] T022 [US2] Integrate RouterProvider into application root in src/main.tsx
+- [x] T022 [US2] Integrate RouterProvider into application root in src/main.tsx
 
 ## Phase 5: Polish & Cross-Cutting Concerns
 
