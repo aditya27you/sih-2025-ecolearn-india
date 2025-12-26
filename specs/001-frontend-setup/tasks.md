@@ -60,7 +60,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 
 - [x] T023 Run full build `npm run build` and verify output size/speed
 - [x] T024 Remove temporary StyleTest component and cleanup src/App.tsx
-- [ ] T025 Run linter `npm run lint` and fix initial setup warnings
+- [x] T025 Run linter `npm run lint` and fix initial setup warnings
 
 ## Dependencies & Execution Order
 
