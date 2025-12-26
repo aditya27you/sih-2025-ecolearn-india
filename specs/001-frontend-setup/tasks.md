@@ -47,7 +47,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 **Independent Test**: Manual navigation to /, /dashboard, /modules works; /unknown 404s.
 
 ### Implementation
-- [ ] T017 [P] [US2] Create Page placeholder: Home in src/pages/Home/Home.tsx
+- [x] T017 [P] [US2] Create Page placeholder: Home in src/pages/Home/Home.tsx
 - [ ] T018 [P] [US2] Create Page placeholder: Dashboard in src/pages/Dashboard/Dashboard.tsx
 - [ ] T019 [P] [US2] Create Page placeholder: Modules in src/pages/Modules/Modules.tsx
 - [ ] T020 [P] [US2] Create Page placeholder: NotFound in src/pages/NotFound/NotFound.tsx
