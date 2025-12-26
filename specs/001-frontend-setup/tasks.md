@@ -39,7 +39,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 - [x] T013 [P] [US1] Create placeholder Atom: Button (DaisyUI styled) in src/components/atoms/Button/Button.tsx
 - [x] T014 [P] [US1] Create placeholder Molecule: Card (DaisyUI styled) in src/components/molecules/Card/Card.tsx
 - [x] T015 [US1] Update App.tsx to display these placeholders for visual verification in src/App.tsx
-- [ ] T016 [US1] Create UIStore with Zustand for global UI state (theme, sidebar) in src/store/ui.store.ts
+- [x] T016 [US1] Create UIStore with Zustand for global UI state (theme, sidebar) in src/store/ui.store.ts
 
 ## Phase 4: User Story 2 - Routing Architecture (Priority: P2)
 
