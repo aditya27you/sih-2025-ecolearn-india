@@ -1,5 +1,4 @@
 import { Outlet, Link } from 'react-router'
-import { Button } from './components/atoms/Button'
 
 function App() {
   return (

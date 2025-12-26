@@ -58,7 +58,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 
 **Purpose**: Cleanup and validation.
 
-- [ ] T023 Run full build `npm run build` and verify output size/speed
+- [x] T023 Run full build `npm run build` and verify output size/speed
 - [ ] T024 Remove temporary StyleTest component and cleanup src/App.tsx
 - [ ] T025 Run linter `npm run lint` and fix initial setup warnings
 

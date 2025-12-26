@@ -1,9 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  /* Vibrant Eco-Energy Theme Variables Fallback */
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  
   --color-primary: oklch(60% 0.20 165);
   --color-secondary: oklch(58% 0.15 195);
   --color-accent: oklch(70% 0.18 45);
