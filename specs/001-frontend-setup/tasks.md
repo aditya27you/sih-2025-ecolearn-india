@@ -24,7 +24,7 @@ description: "Task list for Initial Frontend Setup & Architecture"
 **Purpose**: Establish the styling engine and core type definitions before UI work begins.
 
 - [x] T007 Configure TailwindCSS v4 with custom "Vibrant Eco-Energy" theme colors in tailwind.config.ts (or CSS if v4 native)
-- [ ] T008 Configure PostCSS with Tailwind and Autoprefixer in postcss.config.js
+- [x] T008 Configure PostCSS with Tailwind and Autoprefixer in postcss.config.js
 - [ ] T009 Define core ThemeConfig types (ColorPalette, TypographyConfig) in src/types/theme.ts
 - [ ] T010 Create global CSS with Tailwind directives and DaisyUI config in src/index.css
 - [ ] T011 Verify styling setup by creating a temporary test component in src/components/StyleTest.tsx
