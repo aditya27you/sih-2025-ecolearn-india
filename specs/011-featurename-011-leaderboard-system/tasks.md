@@ -16,7 +16,7 @@ description: "Tasks for Leaderboard System"
 - [x] T004 Implement `LeaderboardRow` in `src/components/molecules/LeaderboardRow/LeaderboardRow.tsx`
 
 ## Phase 3: Organisms
-- [ ] T005 Implement `LeaderboardPodium` in `src/components/organisms/LeaderboardPodium/LeaderboardPodium.tsx`
+- [x] T005 Implement `LeaderboardPodium` in `src/components/organisms/LeaderboardPodium/LeaderboardPodium.tsx`
 - [ ] T006 Implement main `Leaderboard` table in `src/components/organisms/Leaderboard/Leaderboard.tsx`
 
 ## Phase 4: Page & Routing
