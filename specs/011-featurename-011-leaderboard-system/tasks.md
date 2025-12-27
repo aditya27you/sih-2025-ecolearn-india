@@ -13,7 +13,7 @@ description: "Tasks for Leaderboard System"
 
 ## Phase 2: Data & Molecules
 - [x] T003 Create mock leaderboard data in `src/data/leaderboardData.ts`
-- [ ] T004 Implement `LeaderboardRow` in `src/components/molecules/LeaderboardRow/LeaderboardRow.tsx`
+- [x] T004 Implement `LeaderboardRow` in `src/components/molecules/LeaderboardRow/LeaderboardRow.tsx`
 
 ## Phase 3: Organisms
 - [ ] T005 Implement `LeaderboardPodium` in `src/components/organisms/LeaderboardPodium/LeaderboardPodium.tsx`
