@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { Dashboard } from './pages/Dashboard';
 import { Modules } from './pages/Modules';
 import { Challenges } from './pages/Challenges';
+import { Leaderboard } from './pages/Leaderboard';
 import { NotFound } from './pages/NotFound';
 import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
       {
         path: 'challenges',
         element: <Challenges />,
+      },
+      {
+        path: 'leaderboard',
+        element: <Leaderboard />,
       },
     ],
   },
