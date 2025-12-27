@@ -12,7 +12,7 @@ description: "Tasks for Leaderboard System"
 - [x] T002 Create directory structure for `LeaderboardPodium` organism
 
 ## Phase 2: Data & Molecules
-- [ ] T003 Create mock leaderboard data in `src/data/leaderboardData.ts`
+- [x] T003 Create mock leaderboard data in `src/data/leaderboardData.ts`
 - [ ] T004 Implement `LeaderboardRow` in `src/components/molecules/LeaderboardRow/LeaderboardRow.tsx`
 
 ## Phase 3: Organisms
