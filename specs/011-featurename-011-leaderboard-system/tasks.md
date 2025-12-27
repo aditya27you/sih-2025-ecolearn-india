@@ -8,7 +8,7 @@ description: "Tasks for Leaderboard System"
 **Prerequisites**: plan.md, spec.md
 
 ## Phase 1: Setup
-- [ ] T001 Create directory structure for `LeaderboardRow` molecule
+- [x] T001 Create directory structure for `LeaderboardRow` molecule
 - [ ] T002 Create directory structure for `LeaderboardPodium` organism
 
 ## Phase 2: Data & Molecules
