@@ -13,7 +13,7 @@ description: "Tasks for Eco-Challenge System"
 
 ## Phase 2: User Story 1 - Browse Challenges (Priority: P1)
 - [x] T003 [US1] Implement `ChallengeCard` in `src/components/molecules/ChallengeCard/ChallengeCard.tsx`
-- [ ] T004 [US1] Create mock challenge data in `src/data/challengesData.ts`
+- [x] T004 [US1] Create mock challenge data in `src/data/challengesData.ts`
 - [ ] T005 [US1] Implement `ChallengesPage` in `src/pages/Challenges/Challenges.tsx`
 - [ ] T006 [US1] Add `/challenges` route to `src/router.tsx`
 
