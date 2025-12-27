@@ -9,7 +9,7 @@ description: "Tasks for Eco-Challenge System"
 
 ## Phase 1: Setup
 - [x] T001 Verify/Create directory structure in `src/components/molecules/ChallengeCard`
-- [ ] T002 Verify/Create directory structure in `src/pages/Challenges`
+- [x] T002 Verify/Create directory structure in `src/pages/Challenges`
 
 ## Phase 2: User Story 1 - Browse Challenges (Priority: P1)
 - [ ] T003 [US1] Implement `ChallengeCard` in `src/components/molecules/ChallengeCard/ChallengeCard.tsx`
