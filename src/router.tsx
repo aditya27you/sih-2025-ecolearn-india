@@ -6,6 +6,7 @@ import { LearningLayout } from '@/components/templates/LearningLayout';
 import { Home } from './pages/Home';
 import { Dashboard } from './pages/Dashboard';
 import { Modules } from './pages/Modules';
+import { Challenges } from './pages/Challenges';
 import { NotFound } from './pages/NotFound';
 import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
       {
         path: 'modules',
         element: <Modules />,
+      },
+      {
+        path: 'challenges',
+        element: <Challenges />,
       },
     ],
   },
