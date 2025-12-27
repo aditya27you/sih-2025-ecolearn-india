@@ -19,7 +19,7 @@ description: "Tasks for Eco-Challenge System"
 
 ## Phase 3: User Story 2 - Challenge Details (Priority: P1)
 - [x] T007 [US2] Implement `ChallengeDetail` modal/view in `src/components/organisms/ChallengeDetail/ChallengeDetail.tsx`
-- [ ] T008 [US2] Integrate detail view with `ChallengeCard` click event
+- [x] T008 [US2] Integrate detail view with `ChallengeCard` click event
 
 ## Phase 4: User Story 3 - Submit Challenge (Priority: P2)
 - [ ] T009 [US3] Implement `ChallengeSubmission` form in `src/components/organisms/ChallengeSubmission/ChallengeSubmission.tsx`

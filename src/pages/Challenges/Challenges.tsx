@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { ChallengeCard } from '@/components/molecules/ChallengeCard';
 import { challengesData, Challenge } from '@/data/challengesData';
 import { SearchBar } from '@/components/molecules/SearchBar';
+import { ChallengeDetail } from '@/components/organisms/ChallengeDetail';
 
 const Challenges: React.FC = () => {
   const [filteredChallenges, setFilteredChallenges] = useState<Challenge[]>(challengesData);
+  const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(null);
 
   const handleSearch = (query: string) => {
     const lowerQuery = query.toLowerCase();
@@ -17,8 +19,16 @@ const Challenges: React.FC = () => {
   };
 
   const handleViewDetails = (id: string | number) => {
-    console.log('View details for challenge:', id);
-    // TODO: Implement navigation or modal display
+    const challenge = challengesData.find((c) => c.id === id);
+    if (challenge) {
+      setSelectedChallenge(challenge);
+    }
+  };
+
+  const handleSubmitProof = (id: string | number) => {
+    console.log('Submitting proof for challenge:', id);
+    setSelectedChallenge(null);
+    // TODO: Open submission form (Task T009)
   };
 
   return (
@@ -53,6 +63,14 @@ const Challenges: React.FC = () => {
           <h3 className="text-xl font-heading mt-4">No challenges found</h3>
           <p className="text-base-content/50">Try adjusting your search query.</p>
         </div>
+      )}
+
+      {selectedChallenge && (
+        <ChallengeDetail 
+          challenge={selectedChallenge}
+          onClose={() => setSelectedChallenge(null)}
+          onSubmit={handleSubmitProof}
+        />
       )}
     </div>
   );
