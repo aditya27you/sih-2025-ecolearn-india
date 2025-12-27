@@ -18,7 +18,7 @@ description: "Tasks for Eco-Challenge System"
 - [x] T006 [US1] Add `/challenges` route to `src/router.tsx`
 
 ## Phase 3: User Story 2 - Challenge Details (Priority: P1)
-- [ ] T007 [US2] Implement `ChallengeDetail` modal/view in `src/components/organisms/ChallengeDetail/ChallengeDetail.tsx`
+- [x] T007 [US2] Implement `ChallengeDetail` modal/view in `src/components/organisms/ChallengeDetail/ChallengeDetail.tsx`
 - [ ] T008 [US2] Integrate detail view with `ChallengeCard` click event
 
 ## Phase 4: User Story 3 - Submit Challenge (Priority: P2)
