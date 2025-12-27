@@ -8,6 +8,7 @@ export const Navbar: React.FC = () => {
     { title: 'Home', path: '/' },
     { title: 'Dashboard', path: '/dashboard' },
     { title: 'Modules', path: '/modules' },
+    { title: 'Login', path: '/login' },
   ];
 
   return (
