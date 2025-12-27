@@ -1,4 +1,4 @@
-import React, { SelectHTMLAttributes, forwardRef } from 'react';
+import { forwardRef, type SelectHTMLAttributes } from 'react';
 
 export interface SelectOption {
   label: string;
@@ -10,6 +10,7 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   error?: string;
   options: SelectOption[];
   variant?: 'primary' | 'secondary' | 'accent' | 'ghost';
+  placeholder?: string;
 }
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(({ 
@@ -18,6 +19,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
   options,
   variant = 'primary', 
   className = '', 
+  placeholder,
   ...props 
 }, ref) => {
   return (
@@ -32,7 +34,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
         className={`select select-bordered select-${variant} w-full font-sans ${error ? 'select-error' : ''} ${className}`}
         {...props}
       >
-        {props.placeholder && <option disabled value="">{props.placeholder}</option>}
+        {placeholder && <option disabled value="">{placeholder}</option>}
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}
