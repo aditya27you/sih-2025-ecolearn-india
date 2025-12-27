@@ -23,4 +23,4 @@ description: "Tasks for Eco-Challenge System"
 
 ## Phase 4: User Story 3 - Submit Challenge (Priority: P2)
 - [x] T009 [US3] Implement `ChallengeSubmission` form in `src/components/organisms/ChallengeSubmission/ChallengeSubmission.tsx`
-- [ ] T010 [US3] Add "Submit" button and navigation logic to `ChallengesPage`
+- [x] T010 [US3] Add "Submit" button and navigation logic to `ChallengesPage`

@@ -3,10 +3,13 @@ import { ChallengeCard } from '@/components/molecules/ChallengeCard';
 import { challengesData, Challenge } from '@/data/challengesData';
 import { SearchBar } from '@/components/molecules/SearchBar';
 import { ChallengeDetail } from '@/components/organisms/ChallengeDetail';
+import { ChallengeSubmission } from '@/components/organisms/ChallengeSubmission';
 
 const Challenges: React.FC = () => {
   const [filteredChallenges, setFilteredChallenges] = useState<Challenge[]>(challengesData);
   const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(null);
+  const [submittingChallenge, setSubmittingChallenge] = useState<Challenge | null>(null);
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
 
   const handleSearch = (query: string) => {
     const lowerQuery = query.toLowerCase();
@@ -25,10 +28,18 @@ const Challenges: React.FC = () => {
     }
   };
 
-  const handleSubmitProof = (id: string | number) => {
-    console.log('Submitting proof for challenge:', id);
-    setSelectedChallenge(null);
-    // TODO: Open submission form (Task T009)
+  const handleStartSubmission = (id: string | number) => {
+    const challenge = challengesData.find((c) => c.id === id);
+    if (challenge) {
+      setSubmittingChallenge(challenge);
+      setSelectedChallenge(null);
+    }
+  };
+
+  const handleSubmissionSuccess = () => {
+    setSubmittingChallenge(null);
+    setShowSuccessToast(true);
+    setTimeout(() => setShowSuccessToast(false), 5000);
   };
 
   return (
@@ -69,8 +80,25 @@ const Challenges: React.FC = () => {
         <ChallengeDetail 
           challenge={selectedChallenge}
           onClose={() => setSelectedChallenge(null)}
-          onSubmit={handleSubmitProof}
+          onSubmit={handleStartSubmission}
         />
+      )}
+
+      {submittingChallenge && (
+        <ChallengeSubmission 
+          challenge={submittingChallenge}
+          onClose={() => setSubmittingChallenge(null)}
+          onSuccess={handleSubmissionSuccess}
+        />
+      )}
+
+      {showSuccessToast && (
+        <div className="toast toast-end toast-bottom z-[200]">
+          <div className="alert alert-success shadow-lg">
+            <span className="material-symbols-rounded">check_circle</span>
+            <span className="font-sans">Challenge submitted successfully! Pending verification.</span>
+          </div>
+        </div>
       )}
     </div>
   );
