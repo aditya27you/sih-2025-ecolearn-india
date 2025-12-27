@@ -20,6 +20,6 @@ description: "Tasks for Leaderboard System"
 - [x] T006 Implement main `Leaderboard` table in `src/components/organisms/Leaderboard/Leaderboard.tsx`
 
 ## Phase 4: Page & Routing
-- [ ] T007 Implement `LeaderboardPage` in `src/pages/Leaderboard/Leaderboard.tsx`
+- [x] T007 Implement `LeaderboardPage` in `src/pages/Leaderboard/Leaderboard.tsx`
 - [ ] T008 Add `/leaderboard` route to `src/router.tsx`
 - [ ] T009 Update `Navbar.tsx` to include Leaderboard link
