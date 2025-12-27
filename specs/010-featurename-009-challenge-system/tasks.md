@@ -8,7 +8,7 @@ description: "Tasks for Eco-Challenge System"
 **Prerequisites**: plan.md, spec.md
 
 ## Phase 1: Setup
-- [ ] T001 Verify/Create directory structure in `src/components/molecules/ChallengeCard`
+- [x] T001 Verify/Create directory structure in `src/components/molecules/ChallengeCard`
 - [ ] T002 Verify/Create directory structure in `src/pages/Challenges`
 
 ## Phase 2: User Story 1 - Browse Challenges (Priority: P1)
