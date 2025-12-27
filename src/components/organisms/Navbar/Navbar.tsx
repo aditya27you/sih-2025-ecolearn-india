@@ -9,6 +9,7 @@ export const Navbar: React.FC = () => {
     { title: 'Dashboard', path: '/dashboard' },
     { title: 'Modules', path: '/modules' },
     { title: 'Challenges', path: '/challenges' },
+    { title: 'Leaderboard', path: '/leaderboard' },
     { title: 'Login', path: '/login' },
   ];
 
