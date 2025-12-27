@@ -17,7 +17,7 @@ const Modules: React.FC = () => {
           <Card 
             key={module.id} 
             title={module.title}
-            actions={<Button size="sm" variant="secondary">View Module</Button>}
+            actions={<Button size="sm" variant="secondary" onClick={() => window.location.href = `/learn/lesson/${module.id}`}>View Module</Button>}
           >
             <div className="flex justify-between items-center">
               <span className="badge badge-outline">{module.difficulty}</span>
