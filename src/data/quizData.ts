@@ -54,4 +54,52 @@ export const quizzes: Record<string, QuizData> = {
       },
     ],
   },
+  '3': {
+    moduleId: '3',
+    title: 'The Life of Plants Quiz',
+    questions: [
+      {
+        id: 'q1',
+        question: 'Which part of the plant is primarily responsible for absorbing water and nutrients?',
+        options: ['Leaves', 'Stem', 'Roots', 'Flowers'],
+        correctAnswer: 2,
+      },
+      {
+        id: 'q2',
+        question: 'During photosynthesis, what gas do plants absorb from the atmosphere?',
+        options: ['Oxygen', 'Carbon Dioxide', 'Nitrogen', 'Helium'],
+        correctAnswer: 1,
+      },
+      {
+        id: 'q3',
+        question: 'What important substance do plants release that humans and animals need to breathe?',
+        options: ['Carbon Dioxide', 'Methane', 'Oxygen', 'Hydrogen'],
+        correctAnswer: 2,
+      },
+    ],
+  },
+  '4': {
+    moduleId: '4',
+    title: 'Water Conservation Quiz',
+    questions: [
+      {
+        id: 'q1',
+        question: 'Approximately what percentage of Earth\'s water is fresh and easily accessible?',
+        options: ['50%', '10%', '1%', '70%'],
+        correctAnswer: 2,
+      },
+      {
+        id: 'q2',
+        question: 'In the water cycle, what is the process called when water turns into vapor?',
+        options: ['Condensation', 'Precipitation', 'Evaporation', 'Collection'],
+        correctAnswer: 2,
+      },
+      {
+        id: 'q3',
+        question: 'Which of the following is a simple way to save water at home?',
+        options: ['Leaving the tap running while brushing teeth', 'Taking long baths instead of showers', 'Fixing leaky faucets immediately', 'Watering plants at noon'],
+        correctAnswer: 2,
+      },
+    ],
+  },
 };
