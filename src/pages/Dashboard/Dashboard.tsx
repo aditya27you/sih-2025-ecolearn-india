@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from '@/components/molecules/Card';
-import { useUserStore, useLearningStore } from '@/store';
+import { useUserStore, useLearningStore, useLeaderboardStore } from '@/store';
 import { modules } from '@/data/modulesData';
 import { PageTransition } from '@/components/atoms/PageTransition';
 import { motion } from 'framer-motion';
@@ -8,6 +8,19 @@ import { motion } from 'framer-motion';
 const Dashboard: React.FC = () => {
   const { user } = useUserStore();
   const { modulesProgress } = useLearningStore();
+  const { userRank, updateLeaderboard } = useLeaderboardStore();
+
+  useEffect(() => {
+    if (user) {
+      updateLeaderboard({
+        id: user.id,
+        name: user.name,
+        school: user.schoolName,
+        points: user.ecoPoints,
+        avatar: user.avatar
+      });
+    }
+  }, [user, updateLeaderboard]);
 
   const totalPoints = user?.ecoPoints ?? 0;
   const streak = user?.streak ?? 0;
@@ -55,8 +68,10 @@ const Dashboard: React.FC = () => {
           </Card>
 
           <Card title="Rank">
-            <div className="text-4xl font-black text-warning">#12</div>
-            <p className="text-xs text-base-content/50 uppercase tracking-widest font-bold mt-1">School Rank</p>
+            <div className="text-4xl font-black text-warning">
+              #{userRank > 0 ? userRank : '-'}
+            </div>
+            <p className="text-xs text-base-content/50 uppercase tracking-widest font-bold mt-1">National Rank</p>
           </Card>
         </div>
 
