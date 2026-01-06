@@ -14,25 +14,37 @@ export interface QuizData {
 export const quizzes: Record<string, QuizData> = {
   '1': {
     moduleId: '1',
-    title: 'Climate Change 101 Quiz',
+    title: 'The Climate Journey of Gwalior Quiz',
     questions: [
       {
         id: 'q1',
-        question: 'Which of the following is a major greenhouse gas?',
-        options: ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Argon'],
-        correctAnswer: 2,
-      },
-      {
-        id: 'q2',
-        question: 'What is the primary cause of the enhanced greenhouse effect?',
-        options: ['Volcanic eruptions', 'Burning fossil fuels', 'Solar radiation', 'Ocean currents'],
+        question: 'Why does Gwalior experience extreme weather compared to coastal cities?',
+        options: ['It is close to the ocean', 'It is landlocked (Continentality)', 'It has no mountains', 'It is in a rainforest'],
         correctAnswer: 1,
       },
       {
-        id: 'q3',
-        question: 'Which sector contributes the most to global greenhouse gas emissions?',
-        options: ['Agriculture', 'Transportation', 'Energy production', 'Industrial processes'],
+        id: 'q2',
+        question: 'What is the "Loo" in the context of Gwalior\'s climate?',
+        options: ['A cool evening breeze', 'A heavy rainstorm', 'A hot, high-pressure thermal wind', 'A type of winter fog'],
         correctAnswer: 2,
+      },
+      {
+        id: 'q3',
+        question: 'From which direction do the primary monsoon winds come to Gwalior?',
+        options: ['North-East', 'South-West', 'North-West', 'South-East'],
+        correctAnswer: 1,
+      },
+      {
+        id: 'q4',
+        question: 'What causes "Radiation Fog" in Gwalior during January?',
+        options: ['Hot desert winds', 'Industrial smoke only', 'Ground cooling at night turning moist air into droplets', 'Volcanic activity'],
+        correctAnswer: 2,
+      },
+      {
+        id: 'q5',
+        question: 'What is the "Urban Heat Island" effect?',
+        options: ['An island made of sand', 'City centers being hotter than surrounding villages', 'A new park in the city', 'A cold spot in the desert'],
+        correctAnswer: 1,
       },
     ],
   },

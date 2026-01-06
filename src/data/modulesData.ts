@@ -17,25 +17,35 @@ export interface Module {
 export const modules: Module[] = [
   {
     id: '1',
-    title: 'Climate Change 101',
-    description: 'Learn the basics of climate change, its causes, and its impact on our planet.',
+    title: 'The Climate Journey of Gwalior',
+    description: 'Explore how Gwalior\'s landlocked geography creates extreme weather, from the scorching "Loo" to dense winter fog.',
     difficulty: 'Beginner',
     points: 50,
     lessons: [
       {
         id: '1-1',
-        title: 'What is Climate Change?',
-        content: 'Climate change refers to long-term shifts in temperatures and weather patterns. These shifts may be natural, but since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels like coal, oil and gas, which produces heat-trapping gases.',
+        title: 'The Concept of Extremes',
+        content: 'Gwalior follows a Subtropical Climate pattern. Unlike coastal cities (like Mumbai) where the weather stays similar all year, Gwalior is "landlocked," meaning it is far from the ocean. This makes the weather jump from one extreme to another.\n\nScientific Concept: Continentality. Because Gwalior is in the heart of India, the land heats up very quickly and cools down very quickly.\n\nThe Three Pillars:\n1. Summer: Heat and Dust.\n2. Monsoon: Humidity and Clouds.\n3. Winter: Cold and Fog.',
       },
       {
         id: '1-2',
-        title: 'The Greenhouse Effect',
-        content: 'The greenhouse effect is the process by which radiation from a planet\'s atmosphere warms the planet\'s surface to a temperature above what it would be without its atmosphere.',
+        title: 'Surviving the Great Heat',
+        content: 'From March to June, Gwalior becomes one of the hottest cities in India.\n\nThe "Loo" Effect: The Loo is a thermal wind. It isn\'t just a breeze; it is a high-pressure wind that can cause heatstroke. Experts suggest staying indoors between 11 AM and 4 PM during peak summer.\n\nThe 48°C Challenge: When temperatures hit 48°C, the ground loses moisture rapidly. This makes the soil dusty and hard.',
       },
       {
         id: '1-3',
-        title: 'Causes of Global Warming',
-        content: 'Generating electricity and heat by burning fossil fuels causes a large chunk of global emissions. Manufacturing and industry produce emissions, mostly from burning fossil fuels to produce energy for making things like cement, iron, steel, electronics, plastics, clothes, and other goods.',
+        title: 'The Monsoon Cycle',
+        content: 'The Monsoon usually arrives in Gwalior by late June. It is the most important season for the city’s survival.\n\nRainfall Patterns: Gwalior receives about 750 mm of rain annually. Most of this comes from the South-West Monsoon winds blowing from the Arabian Sea and the Bay of Bengal.\n\nHumidity: This is when the air holds the most water vapor. Even if it isn\'t "hot," you will sweat more because the sweat cannot evaporate into the moist air.\n\nGeography: The hills around Gwalior help trap some of these clouds, leading to sudden, heavy thunderstorms.',
+      },
+      {
+        id: '1-4',
+        title: 'The Winter Chill & The Fog',
+        content: 'Winter (November to February) is a complete 180-degree turn from summer.\n\nThe "Cold Wave": Sometimes, cold winds from the Himalayan mountains travel down to Gwalior, causing temperatures to drop to 2°C or 3°C.\n\nRadiation Fog: This happens when the ground cools down at night, and the moist air near the ground turns into tiny water droplets, making visibility almost zero.\n\nAgriculture: This cold weather is perfect for "Rabi Crops" like Wheat and Mustard, which you can see growing in the fields around the city during this time.',
+      },
+      {
+        id: '1-5',
+        title: 'Climate Change & Adaptation',
+        content: 'Urban Heat Islands: Because Gwalior is growing with more buildings and roads, the city center is often 2-3 degrees hotter than the surrounding villages. This is called the "Urban Heat Island" effect.\n\nSmart Adaptation:\n- Traditional: Old houses in Gwalior have high ceilings and small windows to keep out the summer sun.\n- Modern: The government uses the Madhya Pradesh State Action Plan on Climate Change to plant more trees and manage water better to fight the rising heat.\n\nWeather and Pollution: In winter, cold air "traps" smoke and dust near the ground, often leading to poor air quality, showing how weather and environment are linked.',
       }
     ]
   },
