@@ -57,5 +57,53 @@ export const modules: Module[] = [
         content: 'Reduce, Reuse, and Recycle. Reducing means using fewer resources. Reusing means using things again. Recycling means turning waste into new products.',
       }
     ]
+  },
+  {
+    id: '3',
+    title: 'The Life of Plants',
+    description: 'Discover the fascinating world of plants, photosynthesis, and their role in the ecosystem.',
+    difficulty: 'Beginner',
+    points: 60,
+    lessons: [
+      {
+        id: '3-1',
+        title: 'Parts of a Plant',
+        content: 'Roots anchor the plant and absorb water and nutrients. The stem supports the plant and transports fluids. Leaves are the site of photosynthesis. Flowers are the reproductive organs.',
+      },
+      {
+        id: '3-2',
+        title: 'Photosynthesis',
+        content: 'Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy. Here, carbon dioxide and water are converted into glucose (sugar) and oxygen.',
+      },
+      {
+        id: '3-3',
+        title: 'Why Plants Matter',
+        content: 'Plants provide oxygen for us to breathe and food for us to eat. They also provide habitat for wildlife, prevent soil erosion, and help regulate the water cycle.',
+      }
+    ]
+  },
+  {
+    id: '4',
+    title: 'Water Conservation',
+    description: 'Learn why water is scarce and how you can save it in your daily life.',
+    difficulty: 'Beginner', 
+    points: 70,
+    lessons: [
+      {
+        id: '4-1',
+        title: 'The Water Cycle',
+        content: 'The water cycle describes how water evaporates from the surface of the earth, rises into the atmosphere, cools and condenses into rain or snow in clouds, and falls again to the surface as precipitation.',
+      },
+      {
+        id: '4-2',
+        title: 'Water Scarcity',
+        content: 'Although 70% of Earth is covered in water, only about 2.5% is fresh water. Of that, only 1% is easily accessible. Population growth and pollution are putting stress on our water resources.',
+      },
+      {
+        id: '4-3',
+        title: 'Saving Water at Home',
+        content: 'Simple actions can save gallons of water: turn off the tap while brushing teeth, fix leaky faucets, take shorter showers, and water plants early in the morning or late in the evening.',
+      }
+    ]
   }
 ];
