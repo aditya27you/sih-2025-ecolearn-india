@@ -70,11 +70,11 @@ export const router = createBrowserRouter([
             element: <LearningLayout />,
             children: [
               {
-                path: 'lesson/:id',
+                path: 'module/:moduleId/lesson/:lessonId',
                 element: <Lesson />,
               },
               {
-                path: 'quiz/:id',
+                path: 'quiz/:moduleId',
                 element: <Quiz />,
               },
             ],

@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from '@/components/molecules/Card';
 import { Button } from '@/components/atoms/Button';
 import { SearchBar } from '@/components/molecules/SearchBar';
+import { modules } from '@/data/modulesData';
+import { useNavigate } from 'react-router';
 
 const Modules: React.FC = () => {
-  const ecoModules = [
-    { id: 1, title: 'Climate Change 101', difficulty: 'Beginner', points: 50 },
-    { id: 2, title: 'Waste Management', difficulty: 'Intermediate', points: 100 },
-    { id: 3, title: 'Renewable Energy', difficulty: 'Advanced', points: 150 },
-  ];
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredModules = modules.filter(module => 
+    module.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    module.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const handleSearch = (query: string) => {
-    console.log('Searching for:', query);
-    // TODO: Implement filtering logic
+    setSearchQuery(query);
   };
 
   return (
     <div className="p-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-        <h1 className="text-3xl font-heading">Learning Modules</h1>
+        <h1 className="text-3xl font-heading font-bold">Learning Modules</h1>
         <SearchBar 
           onSearch={handleSearch} 
           placeholder="Search modules..." 
@@ -27,19 +30,33 @@ const Modules: React.FC = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {ecoModules.map((module) => (
+        {filteredModules.map((module) => (
           <Card 
             key={module.id} 
             title={module.title}
-            actions={<Button size="sm" variant="secondary" onClick={() => window.location.href = `/learn/lesson/${module.id}`}>View Module</Button>}
+            actions={
+              <Button 
+                size="sm" 
+                variant="secondary" 
+                onClick={() => navigate(`/learn/module/${module.id}/lesson/${module.lessons[0].id}`)}
+              >
+                Start Learning
+              </Button>
+            }
           >
-            <div className="flex justify-between items-center">
-              <span className="badge badge-outline">{module.difficulty}</span>
+            <p className="text-sm text-base-content/70 mb-4 line-clamp-2">{module.description}</p>
+            <div className="flex justify-between items-center mt-auto">
+              <span className="badge badge-outline badge-sm">{module.difficulty}</span>
               <span className="text-primary font-bold">{module.points} pts</span>
             </div>
           </Card>
         ))}
       </div>
+      {filteredModules.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-base-content/60">No modules found matching your search.</p>
+        </div>
+      )}
     </div>
   );
 };

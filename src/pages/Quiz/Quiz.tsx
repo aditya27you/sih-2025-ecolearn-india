@@ -7,14 +7,14 @@ import { quizzes } from '@/data/quizData';
 const QUIZ_TIMER_SECONDS = 120; // 2 minutes per quiz
 
 const Quiz: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { moduleId } = useParams<{ moduleId: string }>();
   const navigate = useNavigate();
   const { activeQuiz, startQuiz, setQuizAnswer, nextQuestion, finishQuiz, resetQuiz } = useLearningStore();
   const { addPoints } = useUserStore();
   const { addToast } = useUIStore();
 
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIMER_SECONDS);
-  const quizData = id ? quizzes[id] : null;
+  const quizData = moduleId ? quizzes[moduleId] : null;
 
   const handleFinish = useCallback(() => {
     if (!activeQuiz || !quizData) return;
@@ -40,11 +40,11 @@ const Quiz: React.FC = () => {
 
   // Initialize quiz
   useEffect(() => {
-    if (id && (!activeQuiz || activeQuiz.currentModuleId !== id)) {
-      startQuiz(id);
+    if (moduleId && (!activeQuiz || activeQuiz.currentModuleId !== moduleId)) {
+      startQuiz(moduleId);
       setTimeLeft(QUIZ_TIMER_SECONDS);
     }
-  }, [id, startQuiz, activeQuiz]);
+  }, [moduleId, startQuiz, activeQuiz]);
 
   // Timer logic
   useEffect(() => {
