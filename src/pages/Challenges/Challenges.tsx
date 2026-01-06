@@ -5,6 +5,7 @@ import { SearchBar } from '@/components/molecules/SearchBar';
 import { ChallengeDetail } from '@/components/organisms/ChallengeDetail';
 import { ChallengeSubmission } from '@/components/organisms/ChallengeSubmission';
 import { PageTransition } from '@/components/atoms/PageTransition';
+import { Link } from 'react-router';
 
 const Challenges: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -38,7 +39,7 @@ const Challenges: React.FC = () => {
       setSelectedChallenge(null);
     }
   };
-// ...
+
   const handleSubmissionSuccess = () => {
     setSubmittingChallenge(null);
     setShowSuccessToast(true);
@@ -51,9 +52,14 @@ const Challenges: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-heading font-bold text-primary">Eco-Challenges</h1>
-            <p className="text-base-content/70 font-sans">
-              Take real-world actions and earn eco-points.
-            </p>
+            <div className="flex gap-4 items-center mt-1">
+              <p className="text-base-content/70 font-sans">
+                Take real-world actions and earn eco-points.
+              </p>
+              <Link to="/challenges/submissions" className="btn btn-xs btn-outline btn-secondary">
+                My Submissions
+              </Link>
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
             <select 

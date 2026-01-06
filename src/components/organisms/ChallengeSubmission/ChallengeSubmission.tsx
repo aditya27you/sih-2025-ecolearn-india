@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Button } from '@/components/atoms/Button';
 import { FormField } from '@/components/molecules/FormField';
 import type { Challenge } from '@/data/challengesData';
-import { useUIStore } from '@/store';
+import { useUIStore, useUserStore } from '@/store';
 
 export interface ChallengeSubmissionProps {
   challenge: Challenge;
@@ -21,6 +21,7 @@ export const ChallengeSubmission: React.FC<ChallengeSubmissionProps> = ({
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const addToast = useUIStore((state) => state.addToast);
+  const addSubmission = useUserStore((state) => state.addSubmission);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -58,6 +59,18 @@ export const ChallengeSubmission: React.FC<ChallengeSubmissionProps> = ({
     try {
       // Simulate API call/Upload
       await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      addSubmission({
+        id: Math.random().toString(36).substring(7),
+        challengeId: challenge.id,
+        challengeTitle: challenge.title,
+        description,
+        imageUrl: imagePreview || '', // In real app, this would be the uploaded URL
+        status: 'pending',
+        submittedAt: new Date().toISOString(),
+        points: challenge.points
+      });
+
       addToast('Proof submitted successfully! A teacher will verify it soon.', 'success');
       onSuccess();
     } catch (error) {

@@ -8,7 +8,7 @@ import { ProtectedRoute, GuestRoute } from '@/components/atoms/ProtectedRoute';
 import { Home } from './pages/Home';
 import { Dashboard } from './pages/Dashboard';
 import { Modules } from './pages/Modules';
-import { Challenges } from './pages/Challenges';
+import { Challenges, MySubmissions } from './pages/Challenges';
 import { Leaderboard } from './pages/Leaderboard';
 import { NotFound } from './pages/NotFound';
 import { Login } from './pages/Login';
@@ -51,6 +51,10 @@ export const router = createBrowserRouter([
               {
                 path: 'challenges',
                 element: <Challenges />,
+              },
+              {
+                path: 'challenges/submissions',
+                element: <MySubmissions />,
               },
               {
                 path: 'leaderboard',
