@@ -15,6 +15,7 @@ import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
 import { Lesson } from './pages/Lesson';
 import { Quiz } from './pages/Quiz';
+import { Profile, EditProfile } from './pages/Profile';
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +54,14 @@ export const router = createBrowserRouter([
               {
                 path: 'leaderboard',
                 element: <Leaderboard />,
+              },
+              {
+                path: 'profile',
+                element: <Profile />,
+              },
+              {
+                path: 'profile/edit',
+                element: <EditProfile />,
               },
             ],
           },
