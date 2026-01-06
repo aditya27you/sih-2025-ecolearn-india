@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/atoms/Button';
 import { Badge } from '@/components/atoms/Badge';
-import { Challenge } from '@/data/challengesData';
+import type { Challenge } from '@/data/challengesData';
 
 export interface ChallengeDetailProps {
   challenge: Challenge;

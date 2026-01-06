@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeaderboardEntry } from '@/data/leaderboardData';
+import type { LeaderboardEntry } from '@/data/leaderboardData';
 
 export interface LeaderboardRowProps {
   entry: LeaderboardEntry;

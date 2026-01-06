@@ -17,61 +17,64 @@ import { Quiz } from './pages/Quiz';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout />,
     errorElement: <NotFound />,
     children: [
       {
-        index: true,
-        element: <Home />,
-      },
-    ],
-  },
-  {
-    element: <AuthLayout />,
-    children: [
-      {
-        path: 'login',
-        element: <Login />,
+        element: <MainLayout />,
+        children: [
+          {
+            index: true,
+            element: <Home />,
+          },
+        ],
       },
       {
-        path: 'signup',
-        element: <SignUp />,
-      },
-    ],
-  },
-  {
-    path: '/learn',
-    element: <LearningLayout />,
-    children: [
-      {
-        path: 'lesson/:id',
-        element: <Lesson />,
-      },
-      {
-        path: 'quiz/:id',
-        element: <Quiz />,
-      },
-    ],
-  },
-  {
-    path: '/',
-    element: <DashboardLayout />,
-    children: [
-      {
-        path: 'dashboard',
-        element: <Dashboard />,
+        element: <DashboardLayout />,
+        children: [
+          {
+            path: 'dashboard',
+            element: <Dashboard />,
+          },
+          {
+            path: 'modules',
+            element: <Modules />,
+          },
+          {
+            path: 'challenges',
+            element: <Challenges />,
+          },
+          {
+            path: 'leaderboard',
+            element: <Leaderboard />,
+          },
+        ],
       },
       {
-        path: 'modules',
-        element: <Modules />,
+        element: <AuthLayout />,
+        children: [
+          {
+            path: 'login',
+            element: <Login />,
+          },
+          {
+            path: 'signup',
+            element: <SignUp />,
+          },
+        ],
       },
       {
-        path: 'challenges',
-        element: <Challenges />,
-      },
-      {
-        path: 'leaderboard',
-        element: <Leaderboard />,
+        path: 'learn',
+        element: <LearningLayout />,
+        children: [
+          {
+            path: 'lesson/:id',
+            element: <Lesson />,
+          },
+          {
+            path: 'quiz/:id',
+            element: <Quiz />,
+          },
+        ],
       },
     ],
   },

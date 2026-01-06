@@ -1,6 +1,6 @@
 import React from 'react';
 import { LeaderboardRow } from '@/components/molecules/LeaderboardRow';
-import { LeaderboardEntry } from '@/data/leaderboardData';
+import type { LeaderboardEntry } from '@/data/leaderboardData';
 
 export interface LeaderboardProps {
   entries: LeaderboardEntry[];

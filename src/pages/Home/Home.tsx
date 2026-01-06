@@ -8,8 +8,6 @@ const Home: React.FC = () => {
         <div className="max-w-md">
           <h1 className="text-5xl font-heading font-bold text-primary">EcoLearn India</h1>
           <p className="py-6 font-sans">
-            Gamified Environmental Education Platform for Schools.
-            Learn. Act. Lead the Green Revolution.
           </p>
           <Button variant="primary">Get Started</Button>
         </div>

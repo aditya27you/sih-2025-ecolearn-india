@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/atoms/Button';
 import { FormField } from '@/components/molecules/FormField';
-import { Challenge } from '@/data/challengesData';
+import type {Challenge} from '@/data/challengesData';
 
 export interface ChallengeSubmissionProps {
   challenge: Challenge;

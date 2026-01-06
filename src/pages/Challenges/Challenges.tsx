@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChallengeCard } from '@/components/molecules/ChallengeCard';
-import { challengesData, Challenge } from '@/data/challengesData';
+import { challengesData, type Challenge } from '@/data/challengesData';
 import { SearchBar } from '@/components/molecules/SearchBar';
 import { ChallengeDetail } from '@/components/organisms/ChallengeDetail';
 import { ChallengeSubmission } from '@/components/organisms/ChallengeSubmission';
