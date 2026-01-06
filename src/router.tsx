@@ -13,6 +13,7 @@ import { Leaderboard } from './pages/Leaderboard';
 import { NotFound } from './pages/NotFound';
 import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
+import { ForgotPassword, ResetPassword } from './pages/ForgotPassword';
 import { Lesson } from './pages/Lesson';
 import { Quiz } from './pages/Quiz';
 import { Profile, EditProfile } from './pages/Profile';
@@ -95,6 +96,14 @@ export const router = createBrowserRouter([
               {
                 path: 'signup',
                 element: <SignUp />,
+              },
+              {
+                path: 'forgot-password',
+                element: <ForgotPassword />,
+              },
+              {
+                path: 'reset-password',
+                element: <ResetPassword />,
               },
             ],
           },

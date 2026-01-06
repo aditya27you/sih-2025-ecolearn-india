@@ -53,6 +53,11 @@ const Login: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         disabled={isLoading}
       />
+      <div className="text-right">
+        <Link to="/forgot-password" className="text-xs link link-primary font-sans">
+          Forgot password?
+        </Link>
+      </div>
       <Button 
         type="submit" 
         className="w-full mt-4" 
