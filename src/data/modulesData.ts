@@ -217,12 +217,37 @@ export const modules: Module[] = [
               title: 'Winter Inversion & Air Quality',
               content: 'Temperature Inversion: During January, Radiation Fog traps pollutants near the surface.\n\nSevere AQI (2026): On January 4, 2026, Gwalior recorded a "Severe" AQI of 261. High humidity (reaching 100%) facilitates persistent dense fog that hampers transportation.',
             },
-            {
-              id: '8-5',
-              title: 'Climate Change Scorecard (2026)',
-              content: 'Severity & Adaptation: Gwalior has a "High" climate severity score, yet 2026 data shows a 9.3% improvement in environmental indicators due to adaptation efforts.\n\nGreen and Blue Infrastructure (GBI): Strategies focus on urban forests and restored water bodies to cool the city center by 2°C to 5°C.\n\nFuture Projections: Projections show a 1–1.2°C increase in mean annual air temperature in the near term.',
-            }
-          ]
-        }
-      ];
-      
+                  {
+                    id: '8-5',
+                    title: 'Climate Change Scorecard (2026)',
+                    content: 'Severity & Adaptation: Gwalior has a "High" climate severity score, yet 2026 data shows a 9.3% improvement in environmental indicators due to adaptation efforts.\n\nGreen and Blue Infrastructure (GBI): Strategies focus on urban forests and restored water bodies to cool the city center by 2°C to 5°C.\n\nFuture Projections: Projections show a 1–1.2°C increase in mean annual air temperature in the near term.',
+                  }
+                ]
+              },
+              {
+                id: '9',
+                title: 'Water Warriors of Gwalior',
+                description: 'Discover the water lifeline of Gwalior, from the historic Tighra Dam to ancient stepwells and river revival.',
+                difficulty: 'Intermediate',
+                points: 120,
+                prerequisiteId: '4', // Locked until Module 4 (Water Conservation) is complete
+                lessons: [
+                  {
+                    id: '9-1',
+                    title: 'The Tighra Dam: Gwalior\'s Lifeline',
+                    content: 'Built on the Sank River in 1916, Tighra Dam is the primary source of drinking water for Gwalior city. It is an engineering marvel and a crucial reservoir that sustains the city through its dry summers. Monitoring its water levels is vital for the city\'s survival.',
+                  },
+                  {
+                    id: '9-2',
+                    title: 'Traditional Baolis (Stepwells)',
+                    content: 'Before modern plumbing, Gwalior relied on "Baolis" or stepwells to harvest rainwater. These structures, like those found in Gwalior Fort, are excellent examples of ancient sustainable engineering. They not only stored water but also served as cool community gathering spaces.',
+                  },
+                  {
+                    id: '9-3',
+                    title: 'The Swarn Rekha River',
+                    content: 'Once a flowing river, the Swarn Rekha has faced severe pollution and encroachment. It is a critical natural drainage channel for the city. Current revival efforts aim to clean the river, prevent sewage entry, and restore its flow to improve groundwater levels.',
+                  }
+                ]
+              }
+            ];
+            
