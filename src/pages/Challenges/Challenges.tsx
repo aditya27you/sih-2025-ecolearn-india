@@ -6,19 +6,21 @@ import { ChallengeDetail } from '@/components/organisms/ChallengeDetail';
 import { ChallengeSubmission } from '@/components/organisms/ChallengeSubmission';
 
 const Challenges: React.FC = () => {
-  const [filteredChallenges, setFilteredChallenges] = useState<Challenge[]>(challengesData);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterDifficulty, setFilterDifficulty] = useState<string>('All');
   const [selectedChallenge, setSelectedChallenge] = useState<Challenge | null>(null);
   const [submittingChallenge, setSubmittingChallenge] = useState<Challenge | null>(null);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
 
+  const filteredChallenges = challengesData.filter((c) => {
+    const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          c.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesDifficulty = filterDifficulty === 'All' || c.difficulty === filterDifficulty;
+    return matchesSearch && matchesDifficulty;
+  });
+
   const handleSearch = (query: string) => {
-    const lowerQuery = query.toLowerCase();
-    const filtered = challengesData.filter(
-      (c) => 
-        c.title.toLowerCase().includes(lowerQuery) || 
-        c.description.toLowerCase().includes(lowerQuery)
-    );
-    setFilteredChallenges(filtered);
+    setSearchQuery(query);
   };
 
   const handleViewDetails = (id: string | number) => {
@@ -51,11 +53,23 @@ const Challenges: React.FC = () => {
             Take real-world actions and earn eco-points.
           </p>
         </div>
-        <SearchBar 
-          onSearch={handleSearch} 
-          placeholder="Search challenges..." 
-          className="max-w-md"
-        />
+        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+          <select 
+            className="select select-bordered w-full sm:w-auto font-sans"
+            value={filterDifficulty}
+            onChange={(e) => setFilterDifficulty(e.target.value)}
+          >
+            <option value="All">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+          <SearchBar 
+            onSearch={handleSearch} 
+            placeholder="Search challenges..." 
+            className="w-full sm:w-64"
+          />
+        </div>
       </div>
 
       {filteredChallenges.length > 0 ? (
