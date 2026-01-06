@@ -1,22 +1,34 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
+import { useUserStore, useUIStore } from '@/store';
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { isAuthenticated, user, clearAuth } = useUserStore();
+  const addToast = useUIStore((state) => state.addToast);
 
-  const navLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'Dashboard', path: '/dashboard' },
-    { title: 'Modules', path: '/modules' },
-    { title: 'Challenges', path: '/challenges' },
-    { title: 'Leaderboard', path: '/leaderboard' },
-    { title: 'Login', path: '/login' },
-  ];
+  const navLinks = isAuthenticated 
+    ? [
+        { title: 'Dashboard', path: '/dashboard' },
+        { title: 'Modules', path: '/modules' },
+        { title: 'Challenges', path: '/challenges' },
+        { title: 'Leaderboard', path: '/leaderboard' },
+      ]
+    : [
+        { title: 'Home', path: '/' },
+        { title: 'Login', path: '/login' },
+      ];
+
+  const handleLogout = () => {
+    clearAuth();
+    addToast('Logged out successfully', 'info');
+    navigate('/login');
+  };
 
   return (
     <div className="navbar bg-base-200 px-4 sticky top-0 z-50 shadow-sm">
       <div className="navbar-start">
-        {/* Mobile Drawer/Dropdown */}
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <span className="material-symbols-rounded">menu</span>
@@ -58,21 +70,35 @@ export const Navbar: React.FC = () => {
       </div>
 
       <div className="navbar-end">
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full bg-primary flex items-center justify-center text-primary-content">
-              <span className="material-symbols-rounded">person</span>
+        {isAuthenticated ? (
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar border border-primary/20">
+              <div className="w-10 rounded-full">
+                {user?.avatar ? (
+                  <img src={user.avatar} alt={user.name} />
+                ) : (
+                  <div className="w-full h-full bg-primary flex items-center justify-center text-primary-content">
+                    <span className="material-symbols-rounded">person</span>
+                  </div>
+                )}
+              </div>
             </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <div className="px-4 py-2 border-b border-base-300 mb-2">
+                <p className="font-bold text-sm truncate">{user?.name}</p>
+                <p className="text-xs text-base-content/60 truncate">{user?.email}</p>
+              </div>
+              <li><Link to="/profile">Profile</Link></li>
+              <li><Link to="/settings">Settings</Link></li>
+              <li><button onClick={handleLogout} className="text-error">Logout</button></li>
+            </ul>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li><a>Profile</a></li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
-          </ul>
-        </div>
+        ) : (
+          <Link to="/login" className="btn btn-primary btn-sm">Get Started</Link>
+        )}
       </div>
     </div>
   );

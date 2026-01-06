@@ -4,6 +4,7 @@ import { MainLayout } from '@/components/templates/MainLayout';
 import { DashboardLayout } from '@/components/templates/DashboardLayout';
 import { AuthLayout } from '@/components/templates/AuthLayout';
 import { LearningLayout } from '@/components/templates/LearningLayout';
+import { ProtectedRoute, GuestRoute } from '@/components/atoms/ProtectedRoute';
 import { Home } from './pages/Home';
 import { Dashboard } from './pages/Dashboard';
 import { Modules } from './pages/Modules';
@@ -30,51 +31,63 @@ export const router = createBrowserRouter([
           },
         ],
       },
+      // Protected Routes
       {
-        element: <DashboardLayout />,
+        element: <ProtectedRoute />,
         children: [
           {
-            path: 'dashboard',
-            element: <Dashboard />,
+            element: <DashboardLayout />,
+            children: [
+              {
+                path: 'dashboard',
+                element: <Dashboard />,
+              },
+              {
+                path: 'modules',
+                element: <Modules />,
+              },
+              {
+                path: 'challenges',
+                element: <Challenges />,
+              },
+              {
+                path: 'leaderboard',
+                element: <Leaderboard />,
+              },
+            ],
           },
           {
-            path: 'modules',
-            element: <Modules />,
-          },
-          {
-            path: 'challenges',
-            element: <Challenges />,
-          },
-          {
-            path: 'leaderboard',
-            element: <Leaderboard />,
+            path: 'learn',
+            element: <LearningLayout />,
+            children: [
+              {
+                path: 'lesson/:id',
+                element: <Lesson />,
+              },
+              {
+                path: 'quiz/:id',
+                element: <Quiz />,
+              },
+            ],
           },
         ],
       },
+      // Guest Routes
       {
-        element: <AuthLayout />,
+        element: <GuestRoute />,
         children: [
           {
-            path: 'login',
-            element: <Login />,
-          },
-          {
-            path: 'signup',
-            element: <SignUp />,
-          },
-        ],
-      },
-      {
-        path: 'learn',
-        element: <LearningLayout />,
-        children: [
-          {
-            path: 'lesson/:id',
-            element: <Lesson />,
-          },
-          {
-            path: 'quiz/:id',
-            element: <Quiz />,
+            element: <AuthLayout />,
+            children: [
+              {
+                path: 'login',
+                element: <Login />,
+              },
+              {
+                path: 'signup',
+                element: <SignUp />,
+              },
+            ],
           },
         ],
       },
