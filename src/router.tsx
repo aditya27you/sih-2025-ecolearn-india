@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router';
+import App from './App';
 import { MainLayout } from '@/components/templates/MainLayout';
 import { DashboardLayout } from '@/components/templates/DashboardLayout';
 import { AuthLayout } from '@/components/templates/AuthLayout';
@@ -17,6 +18,7 @@ import { Quiz } from './pages/Quiz';
 export const router = createBrowserRouter([
   {
     path: '/',
+    element: <App />,
     errorElement: <NotFound />,
     children: [
       {
