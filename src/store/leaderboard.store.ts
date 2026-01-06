@@ -19,12 +19,15 @@ interface LeaderboardState {
   // Actions
   setFilter: (filter: 'national' | 'state' | 'school') => void;
   updateLeaderboard: (currentUser: { id: string; name: string; school?: string; points: number; avatar?: string }) => void;
+  reset: () => void;
 }
 
 export const useLeaderboardStore = create<LeaderboardState>((set) => ({
   leaderboard: [],
   userRank: 0,
   filter: 'national',
+
+  reset: () => set({ leaderboard: [], userRank: 0, filter: 'national' }),
 
   setFilter: (filter) => set({ filter }),
 

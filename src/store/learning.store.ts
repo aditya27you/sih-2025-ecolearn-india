@@ -13,6 +13,9 @@ interface LearningActions {
   nextQuestion: () => void;
   finishQuiz: (score: number) => void;
   resetQuiz: () => void;
+  
+  // System Actions
+  reset: () => void;
 }
 
 type LearningStore = LearningState & LearningActions;
@@ -33,6 +36,8 @@ export const useLearningStore = create<LearningStore>()(
       activeQuiz: null,
 
       // Actions
+      reset: () => set({ modulesProgress: {}, activeQuiz: null }),
+
       updateModuleProgress: (moduleId, updates) => 
         set((state) => ({
           modulesProgress: {
