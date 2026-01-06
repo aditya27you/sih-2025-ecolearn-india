@@ -105,5 +105,77 @@ export const modules: Module[] = [
         content: 'Simple actions can save gallons of water: turn off the tap while brushing teeth, fix leaky faucets, take shorter showers, and water plants early in the morning or late in the evening.',
       }
     ]
+  },
+  {
+    id: '5',
+    title: 'Gwalior\'s Green Heritage',
+    description: 'Explore the climate, heritage trees, and the importance of native species in Gwalior.',
+    difficulty: 'Beginner',
+    points: 80,
+    lessons: [
+      {
+        id: '5-1',
+        title: 'Introduction to Gwalior\'s Trees',
+        content: 'Gwalior has a hot summer and low rainfall, making its climate "dry deciduous." The trees here, like Neem and Peepal, are strong and drought-resistant. Learning about these local "native" trees helps us understand how they survive and support our environment.',
+      },
+      {
+        id: '5-2',
+        title: 'Heritage Trees: The Tamarind of Tansen',
+        content: 'Heritage trees are old trees with historical value. A famous example in Gwalior is the Tamarind tree near Tansen\'s Tomb. Legend says Tansen ate its leaves to sweeten his voice. These trees connect us to our history and culture.',
+      },
+      {
+        id: '5-3',
+        title: 'Sacred Giants: Banyan and Peepal',
+        content: 'You will often find Banyan (Bargad) and Peepal trees near temples and public places in Gwalior. The Banyan is India\'s national tree, known for its aerial roots. The Peepal releases oxygen even at night. Both are considered sacred and provide immense shade.',
+      }
+    ]
+  },
+  {
+    id: '6',
+    title: 'Medicinal Trees of Gwalior',
+    description: 'Discover the healing power of local trees like Neem, Amla, Arjun, and Amaltas.',
+    difficulty: 'Intermediate',
+    points: 90,
+    lessons: [
+      {
+        id: '6-1',
+        title: 'Neem and Amla: The Healers',
+        content: 'Neem is known as the "Village Pharmacy." Its leaves and oil treat skin problems and boost health. Amla (Indian Gooseberry) is rich in Vitamin C, boosting immunity and helping with digestion and hair health.',
+      },
+      {
+        id: '6-2',
+        title: 'Arjun: The Guardian of the Heart',
+        content: 'The Arjun tree has a smooth, grey bark. In Ayurveda, its bark is used to make medicine that strengthens the heart and improves blood flow. It is commonly found in the dry forests of Madhya Pradesh.',
+      },
+      {
+        id: '6-3',
+        title: 'Amaltas: The Golden Shower',
+        content: 'Amaltas is famous for its beautiful hanging yellow flowers in summer, earning it the name "Golden Shower." Its fruit pulp is used in traditional medicine to help with digestion and stomach issues.',
+      }
+    ]
+  },
+  {
+    id: '7',
+    title: 'Trees & Biodiversity',
+    description: 'Understand how trees support animals and our responsibility to conserve them.',
+    difficulty: 'Intermediate',
+    points: 100,
+    lessons: [
+      {
+        id: '7-1',
+        title: 'Trees as Shelter',
+        content: 'Trees are homes for many birds, squirrels, and insects. In Gwalior, trees like the Banyan provide fruit for birds and shelter from the hot sun. Cutting down a tree destroys the homes of many innocent creatures.',
+      },
+      {
+        id: '7-2',
+        title: 'The Food Chain & Balance',
+        content: 'Trees are producers at the base of the food chain. They provide food for herbivores, which are eaten by carnivores. Without trees, this delicate balance collapses, affecting all life, including humans.',
+      },
+      {
+        id: '7-3',
+        title: 'Student Responsibility: Save Trees',
+        content: 'Pollution and urbanization are threatening our trees. As students, you can help by planting native saplings, not wasting paper, and adopting a tree near your home. Remember: "Save Trees, Save Future."',
+      }
+    ]
   }
 ];
