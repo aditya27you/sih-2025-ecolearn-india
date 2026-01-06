@@ -12,6 +12,7 @@ export interface Module {
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   points: number;
   lessons: Lesson[];
+  prerequisiteId?: string;
 }
 
 export const modules: Module[] = [
@@ -181,11 +182,47 @@ export const modules: Module[] = [
         title: 'The Food Chain & Balance',
         content: 'Trees are producers at the base of the food chain. They provide food for herbivores, which are eaten by carnivores. Without trees, this delicate balance collapses, affecting all life, including humans.',
       },
-      {
-        id: '7-3',
-        title: 'Student Responsibility: Save Trees',
-        content: 'Pollution and urbanization are threatening our trees. As students, you can help by planting native saplings, not wasting paper, and adopting a tree near your home. Remember: "Save Trees, Save Future."',
-      }
-    ]
-  }
-];
+            {
+              id: '7-3',
+              title: 'Student Responsibility: Save Trees',
+              content: 'Pollution and urbanization are threatening our trees. As students, you can help by planting native saplings, not wasting paper, and adopting a tree near your home. Remember: "Save Trees, Save Future."',
+            }
+          ]
+        },
+        {
+          id: '8',
+          title: 'Advanced Meteorological Analysis of Gwalior',
+          description: 'A deep dive into synoptic meteorology, thermal dynamics, and environmental indicators of Gwalior as of 2026.',
+          difficulty: 'Advanced',
+          points: 150,
+          prerequisiteId: '1', // Locked until Module 1 is complete
+          lessons: [
+            {
+              id: '8-1',
+              title: 'Synoptic Meteorology & Drivers',
+              content: 'Gwalior’s climate is dictated by large-scale atmospheric movements. \n\nSynoptic Drivers (January 2026): Current weather is influenced by Western Disturbances—cyclonic circulations originating over the Mediterranean. As of Jan 2026, these systems directly impact Gwalior with cooler temperatures and high humidity.\n\nSubtropical Westerly Jet Stream: Gwalior sits under a high-speed jet stream (winds up to 213 kmph), which steers cold-weather systems toward central India.',
+            },
+            {
+              id: '8-2',
+              title: 'Thermal Dynamics & The "Loo"',
+              content: 'Radiative Forcing: In May and June, Gwalior receives peak solar energy (7.6 kWh/m²).\n\nThe Loo Mechanism: The "Loo" is a thermal wind driven by a steep pressure gradient between the Thar Desert and the Gangetic plains. Average wind speeds peak in June at 9.1 mph.\n\nThermal Extremes: While historical highs hit 48°C, 2026 data shows January highs reaching 24°C, warmer than historical deep-winter averages.',
+            },
+            {
+              id: '8-3',
+              title: 'Hydro-Meteorology & Rainfall Shadow',
+              content: 'Orographic Influence: Gwalior lies in a partial rain shadow, receiving only 700–764 mm of annual rainfall—nearly half the state average.\n\nRainfall Distribution: 89.1% of precipitation occurs between mid-June and September. Outside this window, extreme dryness prevails.\n\nHumidity Indices: Perceived humidity peaks in August (31 muggy days), while January experiences almost zero.',
+            },
+            {
+              id: '8-4',
+              title: 'Winter Inversion & Air Quality',
+              content: 'Temperature Inversion: During January, Radiation Fog traps pollutants near the surface.\n\nSevere AQI (2026): On January 4, 2026, Gwalior recorded a "Severe" AQI of 261. High humidity (reaching 100%) facilitates persistent dense fog that hampers transportation.',
+            },
+            {
+              id: '8-5',
+              title: 'Climate Change Scorecard (2026)',
+              content: 'Severity & Adaptation: Gwalior has a "High" climate severity score, yet 2026 data shows a 9.3% improvement in environmental indicators due to adaptation efforts.\n\nGreen and Blue Infrastructure (GBI): Strategies focus on urban forests and restored water bodies to cool the city center by 2°C to 5°C.\n\nFuture Projections: Projections show a 1–1.2°C increase in mean annual air temperature in the near term.',
+            }
+          ]
+        }
+      ];
+      

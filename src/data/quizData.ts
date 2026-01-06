@@ -186,4 +186,40 @@ export const quizzes: Record<string, QuizData> = {
       },
     ],
   },
+  '8': {
+    moduleId: '8',
+    title: 'Advanced Meteorological Analysis Quiz',
+    questions: [
+      {
+        id: 'q1',
+        question: 'Which weather system originates over the Mediterranean and impacts Gwalior in winter?',
+        options: ['Cyclone Tauktae', 'Western Disturbances', 'El Niño', 'Polar Vortex'],
+        correctAnswer: 1,
+      },
+      {
+        id: 'q2',
+        question: 'What was the recorded "Severe" AQI in Gwalior on January 4, 2026?',
+        options: ['150', '400', '261', '50'],
+        correctAnswer: 2,
+      },
+      {
+        id: 'q3',
+        question: 'What strategy uses urban forests and water bodies to cool city centers?',
+        options: ['Industrial Expansion', 'Gray Infrastructure', 'Green and Blue Infrastructure (GBI)', 'Skyline Development'],
+        correctAnswer: 2,
+      },
+      {
+        id: 'q4',
+        question: 'Under RCP 8.5, what is the projected temperature increase for Gwalior in the near term?',
+        options: ['5°C', '0.1°C', '1–1.2°C', '10°C'],
+        correctAnswer: 2,
+      },
+      {
+        id: 'q5',
+        question: 'What phenomenon causes Gwalior city center to be hotter than outskirts?',
+        options: ['Desertification', 'Urban Heat Island (UHI) Effect', 'Global Cooling', 'Ocean Currents'],
+        correctAnswer: 1,
+      },
+    ],
+  },
 };

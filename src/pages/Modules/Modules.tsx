@@ -5,9 +5,11 @@ import { SearchBar } from '@/components/molecules/SearchBar';
 import { modules } from '@/data/modulesData';
 import { useNavigate } from 'react-router';
 import { PageTransition } from '@/components/atoms/PageTransition';
+import { useLearningStore } from '@/store';
 
 const Modules: React.FC = () => {
   const navigate = useNavigate();
+  const { modulesProgress } = useLearningStore();
   const [searchQuery, setSearchQuery] = useState('');
   const [filterDifficulty, setFilterDifficulty] = useState<string>('All');
 
@@ -17,6 +19,11 @@ const Modules: React.FC = () => {
     const matchesDifficulty = filterDifficulty === 'All' || module.difficulty === filterDifficulty;
     return matchesSearch && matchesDifficulty;
   });
+
+  const isModuleLocked = (module: typeof modules[0]) => {
+    if (!module.prerequisiteId) return false;
+    return !modulesProgress[module.prerequisiteId]?.isCompleted;
+  };
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -47,29 +54,44 @@ const Modules: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredModules.map((module) => (
-                    <Card 
-                      key={module.id} 
-                      title={module.title}
-                      animateHover
-                      actions={
-          
-                <Button 
-                  size="sm" 
-                  variant="secondary" 
-                  onClick={() => navigate(`/learn/module/${module.id}/lesson/${module.lessons[0].id}`)}
-                >
-                  Start Learning
-                </Button>
-              }
-            >
-              <p className="text-sm text-base-content/70 mb-4 line-clamp-2">{module.description}</p>
-              <div className="flex justify-between items-center mt-auto">
-                <span className="badge badge-outline badge-sm">{module.difficulty}</span>
-                <span className="text-primary font-bold">{module.points} pts</span>
-              </div>
-            </Card>
-          ))}
+          {filteredModules.map((module) => {
+            const locked = isModuleLocked(module);
+            return (
+              <Card 
+                key={module.id} 
+                title={module.title}
+                animateHover={!locked}
+                className={locked ? 'opacity-75 grayscale-[0.5]' : ''}
+                actions={
+                  <Button 
+                    size="sm" 
+                    variant={locked ? 'ghost' : 'secondary'} 
+                    onClick={() => !locked && navigate(`/learn/module/${module.id}/lesson/${module.lessons[0].id}`)}
+                    disabled={locked}
+                  >
+                    {locked ? (
+                      <span className="flex items-center gap-2">
+                        <span className="material-symbols-rounded text-sm">lock</span>
+                        Locked
+                      </span>
+                    ) : (
+                      modulesProgress[module.id]?.isCompleted ? 'Review' : 'Start Learning'
+                    )}
+                  </Button>
+                }
+              >
+                <p className="text-sm text-base-content/70 mb-4 line-clamp-2">
+                  {locked ? 'Complete prerequisite modules to unlock this lesson.' : module.description}
+                </p>
+                <div className="flex justify-between items-center mt-auto">
+                  <span className="badge badge-outline badge-sm">{module.difficulty}</span>
+                  <span className={`font-bold ${locked ? 'text-base-content/30' : 'text-primary'}`}>
+                    {module.points} pts
+                  </span>
+                </div>
+              </Card>
+            );
+          })}
         </div>
         {filteredModules.length === 0 && (
           <div className="text-center py-12">
