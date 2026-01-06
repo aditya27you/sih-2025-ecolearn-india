@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
-import { useUserStore, useUIStore } from '@/store';
+import { useUserStore, useUIStore, useLearningStore, useLeaderboardStore } from '@/store';
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { isAuthenticated, user, clearAuth } = useUserStore();
+  const resetLearning = useLearningStore((state) => state.reset);
+  const resetLeaderboard = useLeaderboardStore((state) => state.reset);
   const addToast = useUIStore((state) => state.addToast);
 
   const navLinks = isAuthenticated 
@@ -22,6 +24,8 @@ export const Navbar: React.FC = () => {
 
   const handleLogout = () => {
     clearAuth();
+    resetLearning();
+    resetLeaderboard();
     addToast('Logged out successfully', 'info');
     navigate('/login');
   };

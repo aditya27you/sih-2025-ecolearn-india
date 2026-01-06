@@ -222,4 +222,28 @@ export const quizzes: Record<string, QuizData> = {
       },
     ],
   },
+  '9': {
+    moduleId: '9',
+    title: 'Water Warriors of Gwalior Quiz',
+    questions: [
+      {
+        id: 'q1',
+        question: 'What is the primary source of drinking water for Gwalior city?',
+        options: ['Ganges River', 'Tighra Dam', 'Indian Ocean', 'Bhopal Lake'],
+        correctAnswer: 1,
+      },
+      {
+        id: 'q2',
+        question: 'What are "Baolis", which were historically used in Gwalior?',
+        options: ['Stepwells for rainwater harvesting', 'Large towers for defense', 'Underground tunnels', 'Types of local trees'],
+        correctAnswer: 0,
+      },
+      {
+        id: 'q3',
+        question: 'Which river in Gwalior is facing pollution challenges and needs revival?',
+        options: ['Yamuna', 'Swarn Rekha', 'Narmada', 'Godavari'],
+        correctAnswer: 1,
+      },
+    ],
+  },
 };
