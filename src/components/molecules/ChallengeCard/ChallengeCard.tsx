@@ -31,7 +31,8 @@ export const ChallengeCard: React.FC<ChallengeCardProps> = ({
   return (
     <Card 
       title={title} 
-      className={`hover:shadow-lg transition-shadow duration-300 ${className}`}
+      animateHover
+      className={className}
       actions={
         <Button 
           variant="secondary" 

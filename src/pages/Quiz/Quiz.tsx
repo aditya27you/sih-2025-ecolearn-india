@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router';
 import { Button } from '@/components/atoms/Button';
 import { useLearningStore, useUserStore, useUIStore } from '@/store';
 import { quizzes } from '@/data/quizData';
+import confetti from 'canvas-confetti';
 
 const QUIZ_TIMER_SECONDS = 120; // 2 minutes per quiz
 
@@ -30,6 +31,16 @@ const Quiz: React.FC = () => {
     const pointsEarned = correctCount * 10; // 10 points per correct answer
 
     finishQuiz(score);
+
+    if (score >= 70) {
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#10b981', '#3b82f6', '#f59e0b']
+      });
+    }
+
     if (pointsEarned > 0) {
       addPoints(pointsEarned);
       addToast(`Quiz completed! You earned ${pointsEarned} eco-points!`, 'success');

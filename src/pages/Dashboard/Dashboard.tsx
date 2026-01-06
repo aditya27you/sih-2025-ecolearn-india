@@ -3,6 +3,7 @@ import { Card } from '@/components/molecules/Card';
 import { useUserStore, useLearningStore } from '@/store';
 import { modules } from '@/data/modulesData';
 import { PageTransition } from '@/components/atoms/PageTransition';
+import { motion } from 'framer-motion';
 
 const Dashboard: React.FC = () => {
   const { user } = useUserStore();
@@ -83,14 +84,22 @@ const Dashboard: React.FC = () => {
 
           <Card title="Quick Action" className="lg:col-span-1">
             <div className="grid grid-cols-2 gap-4">
-              <button className="btn btn-outline btn-primary h-24 flex flex-col gap-1">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-outline btn-primary h-24 flex flex-col gap-1"
+              >
                 <span className="material-symbols-rounded text-2xl">eco</span>
                 <span className="text-xs capitalize">New Challenge</span>
-              </button>
-              <button className="btn btn-outline btn-secondary h-24 flex flex-col gap-1">
+              </motion.button>
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-outline btn-secondary h-24 flex flex-col gap-1"
+              >
                 <span className="material-symbols-rounded text-2xl">leaderboard</span>
                 <span className="text-xs capitalize">View Rankings</span>
-              </button>
+              </motion.button>
             </div>
           </Card>
         </div>
