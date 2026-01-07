@@ -25,3 +25,9 @@ dist-ssr
 .gemini
 .specify
 .github
+.backend-spec.md
+.env
+.env.test
+.env.production
+.env.local
+.env.example
