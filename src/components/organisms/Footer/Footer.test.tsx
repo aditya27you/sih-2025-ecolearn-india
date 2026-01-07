@@ -11,8 +11,8 @@ describe('Footer Organism', () => {
       </MemoryRouter>
     );
     
-    // EcoLearn India appears in header and copyright
-    expect(screen.getAllByText(/EcoLearn India/i).length).toBeGreaterThan(0);
+    // PrakritiPath appears in header and copyright
+    expect(screen.getAllByText(/PrakritiPath/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/2025/)).toBeInTheDocument();
     expect(screen.getByText('Dashboard')).toBeInTheDocument();
   });

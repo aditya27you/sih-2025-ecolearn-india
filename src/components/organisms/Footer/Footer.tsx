@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="footer p-10 bg-base-300 text-base-content font-sans mt-auto">
       <nav>
-        <h6 className="footer-title opacity-100 font-heading text-primary">EcoLearn India</h6>
+        <h6 className="footer-title opacity-100 font-heading text-primary">PrakritiPath</h6>
         <p className="max-w-xs">
           Empowering the next generation of eco-warriors through gamified learning and real-world impact.
         </p>
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
         </div>
       </nav>
       <div className="w-full border-t border-base-content/10 pt-4 flex flex-col items-center gap-2">
-        <p>© 2025 EcoLearn India - Smart India Hackathon Project</p>
+        <p>© 2025 PrakritiPath - Smart India Hackathon Project</p>
       </div>
     </footer>
   );

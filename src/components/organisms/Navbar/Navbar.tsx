@@ -55,7 +55,7 @@ export const Navbar: React.FC = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl font-heading font-bold text-primary px-0 lg:px-4">
-          EcoLearn India
+          PrakritiPath
         </Link>
       </div>
 

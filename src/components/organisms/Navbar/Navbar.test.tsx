@@ -11,21 +11,21 @@ describe('Navbar Organism', () => {
       </MemoryRouter>
     );
     
-    expect(screen.getByText('EcoLearn India')).toBeInTheDocument();
-    // Dashboard appears twice (mobile and desktop)
-    expect(screen.getAllByText('Dashboard').length).toBeGreaterThan(0);
+    expect(screen.getByText('PrakritiPath')).toBeInTheDocument();
+    expect(screen.getAllByText('Home').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Login').length).toBeGreaterThan(0);
   });
 
   it('highlights the active link', () => {
     render(
-      <MemoryRouter initialEntries={['/dashboard']}>
+      <MemoryRouter initialEntries={['/']}>
         <Navbar />
       </MemoryRouter>
     );
     
     // Find the link in the desktop menu (hidden lg:flex)
-    const dashboardLinks = screen.getAllByText('Dashboard');
-    const activeLink = dashboardLinks.find(el => el.classList.contains('active'));
+    const homeLinks = screen.getAllByText('Home');
+    const activeLink = homeLinks.find(el => el.classList.contains('active'));
     expect(activeLink).toBeDefined();
   });
 });

@@ -157,7 +157,7 @@ const Home: React.FC = () => {
               Ready to make an impact?
             </h2>
             <p className="text-xl text-primary-content/80 mb-10 max-w-2xl mx-auto relative z-10">
-              Join EcoLearn India today and be part of the change you want to see in the world.
+              Join PrakritiPath today and be part of the change you want to see in the world.
             </p>
             <button 
               onClick={() => navigate('/login')}
