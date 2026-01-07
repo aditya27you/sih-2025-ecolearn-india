@@ -2,6 +2,7 @@ import React from 'react';
 import { useUserStore } from '@/store';
 import { Button } from '@/components/atoms/Button';
 import { Link } from 'react-router';
+import { motion } from 'framer-motion';
 
 const Profile: React.FC = () => {
   const { user } = useUserStore();

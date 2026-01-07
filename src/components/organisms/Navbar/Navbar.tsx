@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { useUserStore, useUIStore, useLearningStore, useLeaderboardStore } from '@/store';
+import { motion } from 'framer-motion';
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
