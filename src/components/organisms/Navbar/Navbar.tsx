@@ -84,16 +84,17 @@ export const Navbar: React.FC = () => {
                     alt={user.name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
-                      (e.target as HTMLImageElement).parentElement!.innerHTML = `
-                        <div class="w-full h-full bg-primary flex items-center justify-center text-primary-content">
-                          <span class="material-symbols-rounded">person</span>
-                        </div>
-                      `;
                     }}
                   />
                 ) : (
-                  <div className="w-full h-full bg-primary flex items-center justify-center text-primary-content">
-                    <span className="material-symbols-rounded">person</span>
+                  <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                    <motion.span 
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ repeat: Infinity, duration: 3 }}
+                      className="material-symbols-rounded text-xl"
+                    >
+                      eco
+                    </motion.span>
                   </div>
                 )}
               </div>

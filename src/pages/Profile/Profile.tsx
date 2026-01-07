@@ -15,24 +15,27 @@ const Profile: React.FC = () => {
         <div className="px-8 pb-8">
           <div className="relative flex justify-between items-end -mt-12 mb-6">
             <div className="p-1 bg-base-100 rounded-full">
-              {user.avatar ? (
+              {user.avatar && user.avatar !== 'default-avatar-url' ? (
                 <img 
                   src={user.avatar} 
                   alt={user.name} 
                   className="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = `
-                      <div class="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm bg-primary flex items-center justify-center text-primary-content">
-                        <span class="material-symbols-rounded text-6xl">person</span>
-                      </div>
-                    `;
+                    (e.target as HTMLImageElement).parentElement!.classList.add('animate-pulse');
                   }}
                 />
               ) : (
-                <div className="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm bg-primary flex items-center justify-center text-primary-content">
-                  <span className="material-symbols-rounded text-6xl">person</span>
-                </div>
+                <motion.div 
+                  initial={{ rotate: -10 }}
+                  animate={{ rotate: 10 }}
+                  transition={{ repeat: Infinity, duration: 2, repeatType: "reverse", ease: "easeInOut" }}
+                  className="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm bg-gradient-to-br from-primary to-secondary flex flex-col items-center justify-center text-white overflow-hidden relative"
+                >
+                  <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
+                  <span className="material-symbols-rounded text-6xl relative z-10 drop-shadow-md">eco</span>
+                  <p className="text-[10px] font-black uppercase tracking-tighter relative z-10 bg-white/20 px-2 py-0.5 rounded-full mt-1">Eco Hero</p>
+                </motion.div>
               )}
             </div>
             <Link to="/profile/edit">
