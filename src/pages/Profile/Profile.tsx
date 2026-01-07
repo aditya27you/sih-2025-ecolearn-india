@@ -15,11 +15,25 @@ const Profile: React.FC = () => {
         <div className="px-8 pb-8">
           <div className="relative flex justify-between items-end -mt-12 mb-6">
             <div className="p-1 bg-base-100 rounded-full">
-              <img 
-                src={user.avatar} 
-                alt={user.name} 
-                className="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm"
-              />
+              {user.avatar ? (
+                <img 
+                  src={user.avatar} 
+                  alt={user.name} 
+                  className="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                      <div class="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm bg-primary flex items-center justify-center text-primary-content">
+                        <span class="material-symbols-rounded text-6xl">person</span>
+                      </div>
+                    `;
+                  }}
+                />
+              ) : (
+                <div className="w-32 h-32 rounded-full border-4 border-base-100 shadow-sm bg-primary flex items-center justify-center text-primary-content">
+                  <span className="material-symbols-rounded text-6xl">person</span>
+                </div>
+              )}
             </div>
             <Link to="/profile/edit">
               <Button variant="secondary" size="sm">Edit Profile</Button>
