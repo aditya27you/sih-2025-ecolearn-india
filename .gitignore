@@ -25,3 +25,64 @@ dist-ssr
 .gemini
 .specify
 .github
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API Keys and Credentials
+*.key
+*.pem
+*.pfx
+.aws
+.gcp
+google-credentials.json
+firebase-config.json
+.firebase
+
+# IDE specific files
+.vscode
+.idea
+.DS_Store
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Private configuration
+config.private.*
+secrets.*
+credentials.*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs and temporary files
+/logs
+/tmp
+/temp
+
+# Build artifacts
+/build
+/out
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Misc
+.cache
+.parcel-cache
+.next
+out
