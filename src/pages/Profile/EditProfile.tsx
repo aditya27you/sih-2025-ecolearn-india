@@ -23,8 +23,8 @@ const EditProfile: React.FC = () => {
       updateUser({ name, email });
       addToast('Profile updated successfully!', 'success');
       navigate('/profile');
-    } catch (error) {
-      addToast('Failed to update profile', 'error');
+    } catch {
+      addToast('Failed to update profile. Please try again.', 'error');
     } finally {
       setIsLoading(false);
     }

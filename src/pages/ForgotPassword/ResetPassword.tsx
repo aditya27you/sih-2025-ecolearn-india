@@ -28,8 +28,8 @@ const ResetPassword: React.FC = () => {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       addToast('Password reset successfully!', 'success');
       navigate('/login');
-    } catch (error) {
-      addToast('Failed to reset password', 'error');
+    } catch {
+      addToast('Failed to reset password. Please try again.', 'error');
     } finally {
       setIsLoading(false);
     }
