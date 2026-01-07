@@ -3,6 +3,7 @@ import { Button } from '@/components/atoms/Button';
 import { FormField } from '@/components/molecules/FormField';
 import type { Challenge } from '@/data/challengesData';
 import { useUIStore, useUserStore } from '@/store';
+import api from '@/utils/api';
 
 export interface ChallengeSubmissionProps {
   challenge: Challenge;
@@ -56,25 +57,27 @@ export const ChallengeSubmission: React.FC<ChallengeSubmissionProps> = ({
 
     setIsSubmitting(true);
     
-    try {
-      // Simulate API call/Upload
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      addSubmission({
-        id: Math.random().toString(36).substring(7),
-        challengeId: challenge.id,
-        challengeTitle: challenge.title,
-        description,
-        imageUrl: imagePreview || '', // In real app, this would be the uploaded URL
-        status: 'pending',
-        submittedAt: new Date().toISOString(),
-        points: challenge.points
-      });
+    // Create FormData for file upload
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+    formData.append('challengeId', challenge.id.toString());
+    formData.append('challengeTitle', challenge.title);
+    formData.append('description', description);
+    formData.append('points', challenge.points.toString());
 
+    try {
+      // Real API Call
+      const response = await api.post('/challenges/submit', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      
+      addSubmission(response.data.submission);
       addToast('Proof submitted successfully! A teacher will verify it soon.', 'success');
       onSuccess();
-    } catch (error) {
-      addToast('Failed to submit. Please try again.', 'error');
+    } catch {
+      addToast('Failed to submit proof. Please check your connection.', 'error');
     } finally {
       setIsSubmitting(false);
     }

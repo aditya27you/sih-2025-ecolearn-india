@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=http://localhost:5000/api
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    restart: always
+
+  # You can uncomment and update this when your backend is ready
+  # backend:
+  #   image: your-backend-image
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - MONGO_URI=your_mongodb_uri
+  #     - JWT_SECRET=your_secret

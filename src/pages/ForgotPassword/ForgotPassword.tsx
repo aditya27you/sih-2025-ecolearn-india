@@ -23,8 +23,8 @@ const ForgotPassword: React.FC = () => {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setIsSubmitted(true);
       addToast('Reset link sent to your email!', 'success');
-    } catch (error) {
-      addToast('Something went wrong. Please try again.', 'error');
+    } catch {
+      addToast('Failed to send reset link. Please try again.', 'error');
     } finally {
       setIsLoading(false);
     }
