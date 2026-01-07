@@ -33,6 +33,8 @@ dist-ssr
 .env.development.local
 .env.test.local
 .env.production.local
+.env.example
+.env.test
 
 # API Keys and Credentials
 *.key
@@ -86,3 +88,4 @@ credentials.*
 .parcel-cache
 .next
 out
+.backend-spec.md
