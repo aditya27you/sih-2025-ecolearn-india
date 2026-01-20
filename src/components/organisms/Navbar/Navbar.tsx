@@ -1,122 +1,51 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
-import { useUserStore, useUIStore, useLearningStore, useLeaderboardStore } from '@/store';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-export const Navbar: React.FC = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { isAuthenticated, user, clearAuth } = useUserStore();
-  const resetLearning = useLearningStore((state) => state.reset);
-  const resetLeaderboard = useLeaderboardStore((state) => state.reset);
-  const addToast = useUIStore((state) => state.addToast);
+const Navbar: React.FC = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const navLinks = isAuthenticated 
-    ? [
-        { title: 'Dashboard', path: '/dashboard' },
-        { title: 'Modules', path: '/modules' },
-        { title: 'Challenges', path: '/challenges' },
-        { title: 'Leaderboard', path: '/leaderboard' },
-      ]
-    : [
-        { title: 'Home', path: '/' },
-        { title: 'Login', path: '/login' },
-      ];
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
 
-  const handleLogout = () => {
-    clearAuth();
-    resetLearning();
-    resetLeaderboard();
-    addToast('Logged out successfully', 'info');
-    navigate('/login');
+  const activeLinkStyle = {
+    fontWeight: 'bold',
+    color: 'var(--primary-color)',
   };
 
   return (
-    <div className="navbar bg-base-200 px-4 sticky top-0 z-50 shadow-sm">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <span className="material-symbols-rounded">menu</span>
+    <nav className="bg-base-100 shadow-md">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between py-4">
+          <div className="flex items-center">
+            <NavLink to="/" className="text-2xl font-bold">
+              EcoLearn
+            </NavLink>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <Link 
-                  to={link.path}
-                  className={location.pathname === link.path ? 'active' : ''}
-                >
-                  {link.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden md:flex items-center space-x-4">
+            <NavLink to="/" className="hover:text-primary" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Home</NavLink>
+            <NavLink to="/modules" className="hover:text-primary" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Modules</NavLink>
+            <NavLink to="/challenges" className="hover:text-primary" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Challenges</NavLink>
+            <NavLink to="/leaderboard" className="hover:text-primary" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Leaderboard</NavLink>
+          </div>
+          <div className="md:hidden">
+            <button className="btn btn-square btn-ghost" onClick={toggleDrawer}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+          </div>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl font-heading font-bold text-primary px-0 lg:px-4">
-          PrakritiPath
-        </Link>
       </div>
-
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-2 font-sans">
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link 
-                to={link.path}
-                className={location.pathname === link.path ? 'active' : ''}
-              >
-                {link.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      {/* Mobile Drawer */}
+      <div className={`md:hidden ${isDrawerOpen ? 'block' : 'hidden'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <NavLink to="/" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-base-200" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Home</NavLink>
+          <NavLink to="/modules" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-base-200" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Modules</NavLink>
+          <NavLink to="/challenges" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-base-200" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Challenges</NavLink>
+          <NavLink to="/leaderboard" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-base-200" style={({ isActive }: { isActive: boolean }) => (isActive ? activeLinkStyle : undefined)}>Leaderboard</NavLink>
+        </div>
       </div>
-
-      <div className="navbar-end">
-        {isAuthenticated ? (
-          <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar border border-primary/20">
-              <div className="w-10 rounded-full overflow-hidden">
-                {user?.avatar && user.avatar !== 'default-avatar-url' ? (
-                  <img 
-                    src={user.avatar} 
-                    alt={user.name}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
-                    <motion.span 
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ repeat: Infinity, duration: 3 }}
-                      className="material-symbols-rounded text-xl"
-                    >
-                      eco
-                    </motion.span>
-                  </div>
-                )}
-              </div>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <div className="px-4 py-2 border-b border-base-300 mb-2">
-                <p className="font-bold text-sm truncate">{user?.name}</p>
-                <p className="text-xs text-base-content/60 truncate">{user?.email}</p>
-              </div>
-              <li><Link to="/profile">Profile</Link></li>
-              <li><Link to="/settings">Settings</Link></li>
-              <li><button onClick={handleLogout} className="text-error">Logout</button></li>
-            </ul>
-          </div>
-        ) : (
-          <Link to="/login" className="btn btn-primary btn-sm">Get Started</Link>
-        )}
-      </div>
-    </div>
+    </nav>
   );
 };
+
+export default Navbar;

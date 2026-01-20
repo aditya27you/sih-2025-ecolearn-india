@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import { Navbar } from '@/components/organisms/Navbar';
-import { Footer } from '@/components/organisms/Footer';
+import Navbar from '@/components/organisms/Navbar';
+import Footer from '@/components/organisms/Footer';
 import { Sidebar } from '@/components/organisms/Sidebar';
 
 export const DashboardLayout: React.FC = () => {

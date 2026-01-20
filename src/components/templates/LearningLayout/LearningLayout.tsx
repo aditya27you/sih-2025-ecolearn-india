@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router';
-import { Navbar } from '@/components/organisms/Navbar';
+import Navbar from '@/components/organisms/Navbar';
 
 export const LearningLayout: React.FC = () => {
   return (

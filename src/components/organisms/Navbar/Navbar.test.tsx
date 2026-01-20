@@ -1,31 +1,26 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { Navbar } from './Navbar';
-import { MemoryRouter } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from './Navbar';
 
-describe('Navbar Organism', () => {
-  it('renders branding and navigation links', () => {
+describe('Navbar', () => {
+  it('renders the brand name', () => {
     render(
-      <MemoryRouter>
+      <BrowserRouter>
         <Navbar />
-      </MemoryRouter>
+      </BrowserRouter>
     );
-    
-    expect(screen.getByText('PrakritiPath')).toBeInTheDocument();
-    expect(screen.getAllByText('Home').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Login').length).toBeGreaterThan(0);
+    expect(screen.getByText('EcoLearn')).toBeInTheDocument();
   });
 
-  it('highlights the active link', () => {
+  it('renders navigation links', () => {
     render(
-      <MemoryRouter initialEntries={['/']}>
+      <BrowserRouter>
         <Navbar />
-      </MemoryRouter>
+      </BrowserRouter>
     );
-    
-    // Find the link in the desktop menu (hidden lg:flex)
-    const homeLinks = screen.getAllByText('Home');
-    const activeLink = homeLinks.find(el => el.classList.contains('active'));
-    expect(activeLink).toBeDefined();
+    expect(screen.getByText('Home')).toBeInTheDocument();
+    expect(screen.getByText('Modules')).toBeInTheDocument();
+    expect(screen.getByText('Challenges')).toBeInTheDocument();
+    expect(screen.getByText('Leaderboard')).toBeInTheDocument();
   });
 });
