@@ -28,8 +28,12 @@ const Login: React.FC = () => {
       setAuth(response.user, response.token);
       addToast('Welcome back!', 'success');
       navigate('/dashboard');
-    } catch (error) {
-      addToast(error instanceof Error ? error.message : 'Login failed', 'error');
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        (error instanceof Error ? error.message : 'Login failed');
+      addToast(errorMessage, 'error');
     } finally {
       setIsLoading(false);
     }

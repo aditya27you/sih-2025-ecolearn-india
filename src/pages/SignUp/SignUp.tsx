@@ -28,8 +28,12 @@ const SignUp: React.FC = () => {
       setAuth(response.user, response.token);
       addToast('Account created successfully!', 'success');
       navigate('/dashboard');
-    } catch (error) {
-      addToast(error instanceof Error ? error.message : 'Registration failed', 'error');
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        (error instanceof Error ? error.message : 'Registration failed');
+      addToast(errorMessage, 'error');
     } finally {
       setIsLoading(false);
     }
